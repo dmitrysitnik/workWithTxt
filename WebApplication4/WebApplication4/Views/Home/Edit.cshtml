@@ -1,0 +1,22 @@
+﻿@model WebApplication4.Models.FileModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Редактор файла</title>
+</head>
+<body>
+    <div>     
+            @using (@Html.BeginForm())
+            {
+                <p>Your name: @Html.TextArea("text",(@ViewBag.textFile as string ), 5,50,null) </p>
+                <input type="submit" value="Сохранить" />
+                @Html.ActionLink("Save File", "Edit")
+            }
+    </div>
+</body>
+</html>
